@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=author\ title\ publicationYear\ text
+comment0.target=Book(Author,\ java.lang.String,\ int,\ java.lang.String)
+comment0.text=\n\ \n\ @param\ author\ l'auteur\ du\ livre\n\ @param\ titlele\ titre\ du\ livre\n\ @param\ year\ l'annee\ de\ parution\ du\ livre\n\ @param\ text\ le\ texte\ du\ livre\n
+comment1.params=
+comment1.target=void\ display()
+comment1.text=\n\ affiche\ les\ informations\ sur\ le\ livre\n
+comment2.params=
+comment2.target=void\ read()
+comment2.text=\n\ lit\ le\ livre\ (affiche\ le\ texte)\n
+comment3.params=
+comment3.target=Author\ getAuthor()
+comment3.text=\n\ retourne\ l'auteur\ de\ livre\n\ \n\ @return\ l'auteur\ du\ livre\n
+numComments=4

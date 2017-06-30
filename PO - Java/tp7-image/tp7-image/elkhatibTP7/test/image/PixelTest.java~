@@ -1,0 +1,46 @@
+package image;
+
+import org.junit.*;
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import image.color.GrayColor;
+import image.Pixel;
+
+public class PixelTest {
+
+
+    @Test 
+	public void TestsetetgetColor(){
+	Pixel p = new Pixel(10);
+	GrayColor c = new GrayColor(5);
+	p.setColor(c);
+	assertEquals(p.getColor().GetLevel(),5);
+    }
+    
+    @Test 
+	public void TestEquals(){
+	Pixel p = new Pixel(10);
+	Pixel p2 = new Pixel(10);
+	Pixel p3 = new Pixel(5);
+	assertTrue(p.equals((Object) p2));
+	assertFalse(p.equals((Object) p3));
+    }
+
+    @Test 
+	public void Testcolordiff(){
+	Pixel p = new Pixel(10);
+	Pixel p2 = new Pixel(10);
+	Pixel p3 = new Pixel(5);
+	assertEquals(p.colordifference(p2),0);
+	assertEquals(p.colordifference(p3),5);
+	assertEquals(p3.colordifference(p),5);
+    }
+
+  public static junit.framework.Test suite() {
+	return new junit.framework.JUnit4TestAdapter(image.PixelTest.class);
+    }
+
+}

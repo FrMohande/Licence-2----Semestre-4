@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Projet TW 2014</title>
+        <link href='http://fonts.googleapis.com/css?family=Gudea' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+        <style>
+            
+body {
+    font-family: 'Gudea', sans-serif;
+    counter-reset : n2;
+}
+code, pre {
+    font-family: 'Ubuntu Mono', monospace;
+}
+code.sql{
+    border : dotted 1px;
+    padding : 1pt;
+}
+h2 {
+    counter-reset : n3;
+    counter-increment: n2;
+}
+h2::before{
+    content : counter(n2) "-";
+    margin-right : 7pt;
+}
+h3 {
+    counter-increment: n3;
+}
+h3::before{
+    content : counter(n2) '.' counter(n3);
+    margin-right : 7pt;
+}
+body {
+    margin : 20pt;
+    margin-left : 7%;
+    margin-right : 7%;
+    padding : 10pt;
+    padding-left : 32pt;
+    padding-right : 32pt;
+    
+    background-color : white;
+    color : #411;
+    box-shadow : 0px 0px 3px 3px white;
+    text-align : justify;
+}
+html {
+    background-color : #5b5;
+}
+body>section{
+    margin-left : 20pt;
+}
+body>section h2{
+    margin-left : -20pt;
+}
+        </style>
+    </head>
+    <body>
+        <h1></h1>
+
+<section>
+    <h2>Enregistrement d'une valeur binaire dans une base relationnelle avec la bibliothèque PDO</h2>
+    
+    <p>Les attributs de type binaires (en Postgresql : le type <code>bytea</code>)
+    nécessitent un traitement spécifique piur être lus ou enregistrés dans
+    une base relationelle, surtout quand leur volume est important.</p>
+    
+    <p>On utilisera une requête préparée, avec une pseudo variable à la place de la valeur binaire.
+    Cette pseudo-variable sera ensuite liée (par bindValue) à une donnée PHP qui pourra être soit un chaîne contenant
+    des données binaires, ou même directement un flux ouvert en lecture. Lors de l'utilusation de bindValue,
+    il sera nécessaire de préciser que c'est un type de données binaire.</p>.
+    
+    <h3>Exemple</h3>
+    Dans cet exemple nous supposons que nous disposons d'une table <code>images</code> à 3 attributs :
+    <ul>
+        <li><code>nom</code> : chaîne (nom de l'image)</li>
+        <li><code>type</code> : chaîne (mimetype)</li>
+        <li><code>contenu</code> : bytea (données de l'image)</li>
+    </ul>
+    
+    On supposera que le fichier de l'image à enregistrer dans la base est initialement sur le serveur dans un fichier temporaire
+    <code>tmp/fich1.png</code>.
+    
+    <pre>
+&lt;?php
+ $connexion = new PDO(....);
+ $flux = fopen('tmp/fich1.png');
+ $insertion = $connexion->prepare('insert into images (nom,type,contenu) values (:nom, :type, :contenu)');
+ $insertion->bindValue(':nom','La belle image');
+ $insertion->bindValue(':type','image/png');
+ $insertion->bindValue(':contenu', $flux, PDO::PARAM_LOB );
+ $insertion->execute();
+?&gt;
+    </pre>
+
+</section>
+<section>
+    <h2>Lecture d'une valeur binaire dans une base relationnelle avec la bibliothèque PDO</h2>
+    
+    <p>En lecture, on utilise un mécanisme symétrique. La méthode <code>bindColumn()</code>
+    permet d'associer une variable PHP à l'une des colonnes du résultat d'un <code>select</code>.
+    Si l'on précise que la colonne est de type <code>PDO::PARAM_LOB</code>, la variable
+    associée sera un flux que l'exécution de la requête select ouvrira en lecture sur la valeur de l'attribut.
+    
+    Voyons plutôt un exemple</p>.
+ <pre>
+&lt;?php
+ $connexion = new PDO(....);
+ $requete = $connexion->prepare("select type, contenu from images where nom='La belle image'");
+ $requete->execute();
+ $requete->bindColumn('type', $mimetype);
+ $requete->bindColumn('contenu', $flux, PDO::PARAM_LOB);
+ $requete->fetch();
+ // $mimetype contient le résultat de l'attribut 'type'
+ // $flux est maintenant un flux ouvert en lecture sur les données de l'attribut 'contenu'
+ header("Content-Type : $mimetype");
+ fpassthru($flux);
+?&gt;
+    </pre>
+   
+</section>
+        
+    <section>
+    <h2>Upload de fichier</h2>
+    
+    <p>Voici comment permettre à un utilisateur de transférer l'un de ses fichiers sur le serveur web.</p>.
+    <h3>Le formulaire HTML</h3>
+    <p>Le champ de saisie permettant l'envoi de fichier est</p>
+    <pre>&lt;input type="file" name="nomAChoisir" /&gt;</pre>
+    <p>Attention quand un formulaire contient au moins un <code>input</code> de type <code>file</code>, il est indispensable
+    de lui donner les attributs suivants :</p>
+    <pre>
+&lt;form method="post"  enctype="multipart/form-data" action="..." &gt;        
+    </pre>
+    <h3>Récupération côté serveur, en PHP</h3>
+    <p>Le fichier envoyé est stocké sur le serveur web en tant que fichier temporaire, sous un nom choisi par le serveur.
+    C'est là que vous  pourrez le lire. Notez bien que ce n'est qu'un fichier temporaire qui sera effacé automatiquement
+    à la fin de votre script.
+    Les informations concernant le fichier envoyé sont dans
+    le tableau superglobal <code>$_FILES</code>. Plus précisément, <code>$_FILES['nomAChoisir']</code> sera un tableau associatif
+    avec les données suivantes</p>
+    <table>
+        <tr><td><code>$_FILES['nomAChoisir']['name']</code></td><td>Nom du fichier d'origine (sur l'ordinateur de l'expéditeur)</td></tr>
+        <tr><td><code>$_FILES['nomAChoisir']['size']</code></td><td>Taille du fichier (en octets)</td></tr>
+        <tr><td><code>$_FILES['nomAChoisir']['type']</code></td><td>Type (mimetype) du fichier</td></tr>
+        <tr><td><code>$_FILES['nomAChoisir']['tmp_name']</code></td><td>Nom du fichier temporaire créé sur le serveur</td></tr>
+        <tr><td><code>$_FILES['nomAChoisir']['error']</code></td><td>Code d'erreur éventuel</td></tr>
+    </table>
+ 
+</section>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Robot()
+comment0.text=\r\n\ constructeurs\ d'objets\ de\ la\ classe\ Robot\r\n
+comment1.params=box
+comment1.target=void\ take(Box)
+comment1.text=\r\n\ le\ robot\ prend\ une\ caisse\ si\ il\ n'en\ tenait\ aucune\r\n\ \r\n\ @param\ box\r\n\ \ \ \ \ \ \ \ \ \ \ \ la\ caisse\ port\u00E9e\r\n
+comment2.params=belt
+comment2.target=void\ putOn(ConveyerBelt)
+comment2.text=\r\n\ le\ robot\ pose\ la\ caisse\ qu'il\ tient\ sur\ le\ tapis\ precise\r\n\ \r\n\ @param\ tapis\r\n\ \ \ \ \ \ \ \ \ \ \ \ le\ tapis\ sur\ lequel\ la\ caisse\ est\ deposee\r\n
+comment3.params=
+comment3.target=boolean\ carryBox()
+comment3.text=\r\n\ retourne\ <tt>true</tt>\ si\ le\ robot\ porte\ une\ caisse\r\n\ \r\n\ @return\ <tt>true</tt>\ si\ le\ robot\ porte\ une\ caisse\r\n
+numComments=4

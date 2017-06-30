@@ -1,0 +1,41 @@
+body {
+	background-color : #F5F5DC;
+}
+
+ul {
+	list-style: none;
+	display: block;
+	width: 70%;
+	margin: auto;
+}
+
+li.newlivre {
+	display: inline-block;
+	position: relative;
+	background-color: rgba(183,106,222,0.8);
+	width: 320px;
+	height: 520px;
+	text-align: center;
+	border: 1px solid black;
+	float: left;
+}
+
+div.couverture {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	margin: 2px;
+}
+
+div.couverture img {
+	height: 350px;
+}
+
+h2.titre {
+	display: block;
+	padding: 5px;
+	width: 95%;
+	margin: auto;
+	color: blue;
+	font-size: 100%;
+}

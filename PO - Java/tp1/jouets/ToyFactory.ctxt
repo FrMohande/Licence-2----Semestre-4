@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ToyFactory()
+comment0.text=\r\n\ construit\ une\ usine\ sans\ marque\ sp\u00E9cifique\ ("generic")\r\n
+comment1.params=brand
+comment1.target=ToyFactory(java.lang.String)
+comment2.params=
+comment2.target=Toy\ fabrique()
+comment2.text=\ fabrique\ un\ nouveau\ jouet\ de\ la\ marque\r\n\ @return\ le\ nouveau\ jouet\ fabrique\r\n
+numComments=3

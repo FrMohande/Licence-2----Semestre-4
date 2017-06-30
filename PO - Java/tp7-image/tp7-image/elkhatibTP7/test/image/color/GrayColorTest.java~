@@ -1,0 +1,34 @@
+package image.color;
+
+import org.junit.*;
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import image.color.GrayColor;
+
+public class GrayColorTest {
+
+    @Test
+	public void TestGetLevel(){
+	GrayColor c = new GrayColor(10);
+	assertEquals(c.GetLevel(),10);
+	assertNotSame(c.GetLevel(),5);
+    }
+
+
+    @Test
+	public void Testequals(){
+	GrayColor c = new GrayColor(10);
+	GrayColor c2 = new GrayColor(10);
+	GrayColor c3 = new GrayColor(5);
+	assertTrue(c.equals((Object) c2));
+	assertFalse(c.equals((Object) c3));
+    }
+
+     public static junit.framework.Test suite() {
+	return new junit.framework.JUnit4TestAdapter(image.color.GrayColorTest.class);
+    }
+
+}

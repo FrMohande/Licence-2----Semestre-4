@@ -1,0 +1,9 @@
+package battleship.direction;
+import battleship.direction.Direction;
+import battleship.Position;
+
+public class WestDirection implements Direction{
+	public Position nextPosition(Position p){
+		return (new Position(p.getX(), p.getY()-1));
+	}
+}

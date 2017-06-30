@@ -1,0 +1,39 @@
+package rps;
+import java.util.Random ;
+
+/**
+ * @author : Eddy El Khatib
+ */
+
+public enum Shape {
+	ROCK,PAPER,SCISSORS;
+	private static Random alea = new Random() ;
+	
+	/*  this function will choose the next value from the enum Shape
+	* @return <code>Shape</code> will choose the next Shape
+	*/ 
+	public Shape next() {
+		return Shape.values()[(this.ordinal() +1) % 3] ;
+	}
+	/*
+	* this function will choose a random value from the enum Shape
+	* @return <code>Shape</code> the value from Shape
+	*/
+	public static Shape random() {
+		return Shape.values()[alea.nextInt(3)] ;
+	}
+	/* this function will return if the shape is equals,above,bellow from the object in the parameters
+	* @param <code>e</code> type Shape
+	* @return <code>int</code> will return if 0 is they are equals , -1 if the object who call the function is bellow else 1 
+	*/
+	public int compareShape(Shape e) {
+		if(this == e) {
+			return 0 ;
+		}
+		if(this == e.next()) {
+			return -1 ;
+		} else {
+			return 1 ;
+		}  
+	}
+}

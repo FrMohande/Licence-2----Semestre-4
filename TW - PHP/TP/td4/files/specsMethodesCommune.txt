@@ -1,0 +1,10 @@
+
+ public function nom();         //simple accesseur
+ public function codeDept();    //simple accesseur
+ public function codeCommune(); //simple accesseur
+ public function codeArrondissement();  //simple accesseur
+ public function population();  //simple accesseur
+ public function codeINSEE();   //concatenation des codes département et commune
+ public function coordonnees(); // tableau de 2 flottants : latitude et longitude
+ public function nomComplet();  // nom avec article éventuel
+ public function nomCharniere();// nom avec charnière

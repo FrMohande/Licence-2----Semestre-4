@@ -1,0 +1,9 @@
+TP1 de PDC effectué par Eddy El Khatib
+
+Vous trouverez dans le fichier compterendu.txt les réponses aux questions qui sont posées dans le sujet (uniquement d'écrit, pas de programmation).
+
+Vous trouverez dans les fichiers générés résultant de manipulations effectuées au cours du tp (les fichiers générés par les commandes gcc -E, etc... ainsi que le fichier généré par le décryptage de crypto2.txt.
+
+Vous trouverez dans les fichier.c, le contenu du code écrit pour la résolution des questions demandant des lignes de code, les fichiers et les questions sont précisées dans compterendu.txt.
+
+Bonne correction.

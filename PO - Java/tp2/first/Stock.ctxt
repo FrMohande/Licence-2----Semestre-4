@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Stock()
+comment1.params=
+comment1.target=int\ getQuantity()
+comment1.text=\n\ Cette\ m\u00E9thode\ renvoie\ la\ quantit\u00E9\ en\ stock\n\ @return\ Quantit\u00E9\ en\ stock\n
+comment2.params=prmQuantity
+comment2.target=void\ add(int)
+comment2.text=\n\ \n
+comment3.params=prmQuantity
+comment3.target=int\ remove(int)
+numComments=4

@@ -1,0 +1,29 @@
+header {
+  text-align: center;
+}
+section {
+  background-color: yellow;
+   border:1px dashed gray;  
+  border-width: 4px;
+  width: 50%;
+  margin-top: 20px;
+  margin-left: 50px;
+  font-style: italic;
+
+
+
+  
+}
+.nom {
+  color: red;
+}
+section h2 {
+  background-color: red;
+  color: white;
+  width:40%;
+  border-radius: 10px;
+ text-align: right;
+ font-style:initial;
+
+
+}

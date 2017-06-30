@@ -1,0 +1,43 @@
+package rps ;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class PlayerTest {
+	@Test 
+	public void testPlayerTest() {
+		Player p1 = new Player("Outioua",new StrategyAlea() )	;
+		assertNotNull(p1) ;
+	}
+	@Test
+	public void testGetName() {
+		Player p1 = new Player("Outioua", new StrategyAlea() ) ;
+		AssertEquals(p1.getName(),"Outioua") ;
+
+	}
+	@Test
+	public void testGetScore() {
+		Player p1 = new Player("Outioua", new StrategyAlea() ) ;
+		p1.addPoints(10) ;
+		AssertEquals(p1.getScore(),10) ;
+
+	}
+	@Test
+	public void testAddPoints() {
+		/* No idea */ 
+
+
+	}
+	@Test
+	public void testPlay() {
+		Player p1 = new Player("Outioua", new StrategyRock() ) ;
+		AssertEquals(p1.play(),Shape.ROCK) ;
+
+
+	}
+	public static junit.framework.Test suite() {
+		return new junit.framework.JUnit4TestAdapter(rps.PlayerTest.class);
+    }
+}

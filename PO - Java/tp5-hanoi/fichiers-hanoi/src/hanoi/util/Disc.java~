@@ -1,0 +1,67 @@
+package hanoi.util ; 
+
+/**
+ * 
+ * @author OUTIOUA MOHAND and Eddy El Khatib
+ * @version 2.0 
+ */
+
+public class Disc {
+	// les attributs de la classe Disc
+	/** */ 
+	private int taille ; 
+	private Disc dessous ; 
+
+	// les attributs de la classe Disc
+	/** */ 
+	public Disc(int taille) {
+		this.taille = taille ; 
+		dessous = null ;
+	}
+
+	// les attributs de la classe Disc
+	/** */ 
+	public Disc getDessous() {
+		return this.dessous;
+	}
+	// les attributs de la classe Disc
+	/** */ 
+	public void setDessous(Disc sous) {
+			this.dessous = sous ; 
+	}
+
+
+	// les attributs de la classe Disc
+	/** */ 
+	public int getTaille() {
+		return this.taille;
+	}
+	/*
+	* Si l'objet courant est plus petit que l'objet autre on renvoie true
+	*  Donc si on renvoie false l'objet autre est plus petit que l'objet courant 
+	*/
+	public boolean estPlusPetit(Disc autre) {
+		boolean cmp = false  ;
+		if ( this.getTaille() < autre.getTaille() ) {
+			cmp = true ;
+		}
+		return cmp;
+	}
+
+
+	// les attributs de la classe Disc
+	/** */ 
+	public String toString() {
+		String discString = "";
+		for(int i = 1;i<=this.taille;i++){
+			discString += "_";
+		}
+		discString += "|";
+		for(int i = 1;i<=this.taille;i++){
+			discString += "_";
+		}
+		return discString;
+	}
+
+
+}

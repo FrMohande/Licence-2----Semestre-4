@@ -1,0 +1,44 @@
+struct elt_t {
+	int val;
+	struct elt_t * next ;
+}
+typedef struct elt_t * Pile_t;
+
+int est_vide(Pile_t pile) {
+	return pile == NULL ;
+}
+
+Pile_t empiler(Pile_t pile, int elt) {
+	Pile_t res ;
+	res = (Pile_t) malloc(sizeof(struct elt_)) ;
+	res-> val = elt ;
+	res->next=pile ;
+	return res ;
+}
+Pile_t depiler(Pile_t pile,int* res) {
+/* pile non vide */
+	if(res != NULL) 
+	Pile_t tmp = pile->next ;
+	*res = pile->val ;
+	free(pile) ;
+	return pile->next;
+}
+
+valgrind EXEC
+ permet de voir si il y'a des fuites  de mémoires.
+
+malloc => free 
+
+char * tmp 
+while(*tmp ='\0') {
+	tmp++
+}
+
+
+void clean_pile(Pile_t pile) {
+	int tmp ;
+	while(pile !=NULL)
+		pile=depiler(pile,&tmp) ;
+
+
+}

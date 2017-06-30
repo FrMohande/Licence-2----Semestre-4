@@ -1,0 +1,47 @@
+Eddy El Khatib
+
+Q1 -
+
+D'autres tris en place: Le tri par insertion, le tri bulle et le tri shell.
+
+Q10 -
+
+Conclusion : la performance est aléatoire et dépend surement de la valeur du pivot et/ou de la façon dont le tableau est agencé en entrée.
+
+Q11 -
+
+LA valeur du pivot dans le pire des cas est soit la valeur la plus grande, soit la plus petite : le pire des cas étant pour le coup le fait qu'un tableau soit déjà trié (de façon croissante ou non) en entrée (ce qui nous produira à chaque fois une partie vide et une partie pleine dans chaque division de tableau pas la fonction partitionner).
+
+T(0) = 0
+T(n) = T(n-1) + Theta(n)
+
+Tri rapide est donc en O(n²)
+
+Q12 -
+
+Théoriquement, la valeur a choisir pour avoir la meilleure performance d'un tri rapide est la valeur médiane du tableau :
+
+exemple pour le tableau [|5;6;7;2;1;|] la valeur médiane est 5
+
+Tout cela dans le but de faire en sorte d'avoir deux tranches de valeur plus ou moins n/2 (vu que l'une est de taille (partieinf)n/2 et l'autre ((partiesup)n/2) -1.
+
+Q15 -
+
+Le choix du pivot optimal nous permet d'avoir des performances bien superieures à celles du pivot aléatoire et du pivot de début.
+
+Q16 -
+
+T(0) = 0
+T(n) = Theta(n) + T((partieinf)n/2) + T(((partiesup)n/2) -1)
+
+Tri rapide optimal est en Omega(nlogn)
+
+Q17 -
+
+Si l'on ajoute aux comparaisons comptées celles de la fonction calculant le pivot, le tri rapide avec pivot optimal n'est absolument pas le meilleur.
+
+Q16 -
+
+
+
+

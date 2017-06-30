@@ -1,0 +1,19 @@
+package rps.strategy;
+
+/**
+ * @author : Eddy El Khatib
+ */
+
+import rps.Shape;
+import rps.Strategy;
+
+public class StrategyCyclic implements Strategy {
+	/**   the player will choose the first shape in random and the next shape will be the next value from the first shape 
+	example the first Shape was PAPER the next will be SCISSOR and after ROCK */ 
+	private static Shape alea = Shape.random();
+	public Shape chooseShape() {
+		Shape tmp = this.alea;
+		this.alea = this.alea.next();
+		return tmp;
+	}
+}

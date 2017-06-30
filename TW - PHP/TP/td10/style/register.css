@@ -1,0 +1,116 @@
+html,body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+div#register {
+	display: block;
+	width: 45%;
+	text-align: center;
+	border-radius: 5px;
+	margin: auto;
+	position: relative;
+	top: 30%;
+	padding: 20px;
+	border: 1px solid black;
+}
+
+div#register>label {
+	display: block;
+	width: 400px;
+	padding: 5px;
+	text-align: left;
+	margin: auto;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px gray;
+	border-bottom: 1px solid #A00;
+}
+
+div#register form {
+	display: block;
+	width: 400px;
+	margin: auto;
+	height: 180px;
+}
+
+div#register form div.collumn {
+	display: block;
+	float: left;
+	width: 200px;
+	height: 160px;
+}
+
+div#register form label {
+	display: block;
+	width: 100%;
+	text-align: left;
+	font-size: 14px;
+}
+
+div#register form input[name] {
+	display: inline-block;
+	width: 95%;
+	float: left;
+}
+
+div#register form input[type].checkable {
+	display: inline-block;
+	width: 80%;
+	float: left;
+}
+
+div#register form span.red {
+	font-size: 11px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+div#register form input[type="submit"], div#register form input[type="reset"] {
+	display: inline-block;
+	width: 90px;
+}
+
+.red {
+	color: #A00;
+}
+
+.green {
+	color: green;
+}
+
+div.errors {
+	display: block;
+	border: 2px solid #A00;
+	width: 46%;
+	padding: 10px;
+	margin: auto;
+	position: relative;
+	top: 150px;
+	z-index: 2;
+}
+
+div.welcome {
+	display: block;
+	border: 2px solid green;
+	width: 46%;
+	padding: 10px;
+	margin: auto;
+	position: relative;
+	top: 150px;
+	z-index: 2;
+	text-align: center;
+}
+
+form#register div.collumn label#charLeft {
+	display: inline-block;
+	width: 20px;
+	text-align: center;
+}
+
+div#checkDiv {
+	border-radius: 2px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}

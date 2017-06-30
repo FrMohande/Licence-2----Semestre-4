@@ -1,0 +1,26 @@
+table {
+	margin: auto;
+	display: block;
+	border-collapse: collapse;
+}
+
+table tbody {
+	width: 350px;
+	margin: auto;
+	display: block;
+}
+
+table td {
+	width: 5px;
+	height: 5px;
+	text-align: center;
+	background-color: transparent;
+}
+
+td.noir {
+	background-color: black;
+}
+
+td.blanc {
+	background-color: white;
+}

@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=maxWeight
+comment0.target=ConveyerBelt(int)
+comment0.text=\n\ constructeurs\ d'objets\ de\ la\ classe\ TapisRoulant\n\ @param\ maxWeight\ poids\ maximum\ accept\u00C3\u00A9\ par\ le\ tapis\n
+comment1.params=
+comment1.target=int\ getMaxWeight()
+comment1.text=\n\ donne\ le\ poids\ maximal\ accepte\n\ \n\ @return\ le\ pods\ maximal\ accepte\n
+comment2.params=
+comment2.target=boolean\ isFull()
+comment2.text=\n\ indique\ si\ le\ tapis\ est\ plein\n\ \n\ @return\ <t>true</t>\ si\ le\ tapis\ est\ plein\ de\ caisses\n
+comment3.params=
+comment3.target=void\ display()
+comment3.text=\n\ affiche\ le\ contenu\ du\ tapis\ roulant\n
+comment4.params=
+comment4.target=void\ emptyBelt()
+comment4.text=\n\ vide\ le\ tapis\ roulant\ (supprime\ toutes\ les\ caisses)\n
+numComments=5

@@ -1,0 +1,58 @@
+all: compile jar tst clean
+	
+tst: compile RentalAgencyTest.class ClientTest.class BrandCriterionTest.class PriceCriterionTest.class VehicleTest.class VehicleTest.class MotorBikeTest.class InterCriterionTest.class CarTest.class SuspiciousRentalAgencyTest.class
+	java -jar test-1.7.jar rental.ClientTest
+	java -jar test-1.7.jar rental.BrandCriterionTest
+	java -jar test-1.7.jar rental.PriceCriterionTest
+	java -jar test-1.7.jar rental.VehicleTest
+	java -jar test-1.7.jar rental.MotorBikeTest
+	java -jar test-1.7.jar rental.InterCriterionTest
+	java -jar test-1.7.jar rental.CarTest
+	java -jar test-1.7.jar rental.SuspiciousRentalAgencyTest
+	java -jar test-1.7.jar rental.RentalAgencyTest
+
+clean:
+	rm -rf classes
+	rm -f test/rental/*.class
+
+run:
+	java -jar RunRental.jar
+
+doc: compile
+	cd src; \
+	javadoc rental -d ../docs -author
+
+jar: compile doc
+	jar cvfm RunRental.jar manifest-ex docs test -C classes rental
+
+compile:
+	mkdir classes; \
+	cd src; \
+	javac rental/RentalMain.java -d ../classes
+
+ClientTest.class:
+	javac -classpath test-1.7.jar test/rental/ClientTest.java
+
+BrandCriterionTest.class:
+	javac -classpath test-1.7.jar test/rental/BrandCriterionTest.java
+
+PriceCriterionTest.class:
+	javac -classpath test-1.7.jar test/rental/PriceCriterionTest.java
+
+VehicleTest.class:
+	javac -classpath test-1.7.jar test/rental/VehicleTest.java
+
+MotorBikeTest.class:
+	javac -classpath test-1.7.jar test/rental/MotorBikeTest.java
+
+InterCriterionTest.class:
+	javac -classpath test-1.7.jar test/rental/InterCriterionTest.java
+
+CarTest.class:
+	javac -classpath test-1.7.jar test/rental/CarTest.java
+
+SuspiciousRentalAgencyTest.class:
+	javac -classpath test-1.7.jar test/rental/SuspiciousRentalAgencyTest.java
+
+RentalAgencyTest.class:
+	javac -classpath test-1.7.jar test/rental/RentalAgencyTest.java

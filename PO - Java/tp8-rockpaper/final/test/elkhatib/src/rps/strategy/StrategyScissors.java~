@@ -1,0 +1,16 @@
+package rps.strategy;
+
+/**
+ * @author : Mohand Outioua
+ */
+
+import rps.Strategy;
+import rps.Shape;
+
+
+public class StrategyScissors implements Strategy {
+	/* the player will always play SCISSORS */
+	public Shape chooseShape() {
+		return Shape.SCISSORS ;
+	}
+}

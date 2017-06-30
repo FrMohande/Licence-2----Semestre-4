@@ -1,0 +1,22 @@
+TP effecuté par Eddy El Khatib
+
+
+
+Un makefile a été créé pour faciliter les manipulations :
+
+clean : efface les .classes de l'ensemble du dossier et de ses sous dossiers (efface egalement le dossier classes)
+
+compile : permet de compiler les classes
+
+jar : permet de créer "appli.jar" depuis les classes
+
+doc : permet de créer la documentation depuis "appli.jar" (fourni)
+
+tst : permet de tester grâce à la classe de test "monBoxTest"
+
+run : permet d'executer le main de la classe Box afin de le tester
+
+monBoxTest.class : permet de compiler la classe de test pour effectuer les tests necessaires sur les classes créées
+
+
+Bonne correction.

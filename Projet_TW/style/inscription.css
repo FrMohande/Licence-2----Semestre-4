@@ -1,0 +1,135 @@
+
+
+
+
+html, body, div, span, img, fieldset, form, label, footer, header 
+{
+
+  margin: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  font-size: 100%;
+
+  font: inherit;
+
+  vertical-align: baseline;
+
+}
+
+
+
+footer, header 
+{
+
+  display: block;
+
+}
+
+
+
+
+
+body {
+  background-color: #4d5155;
+	font-family:'Open Sans',sans-serif;
+	color:#e9ecf0;
+}
+
+
+
+header{
+
+	width:326px;
+
+	height:27px;
+
+	margin:100px auto;
+
+}
+
+	
+
+#main{
+
+	padding:30px 0;
+
+	border: none;
+
+	width:326px;
+
+	height:500px;
+
+	margin:100px auto;	
+
+}
+
+
+	
+
+		
+input{
+
+	background-color:#303030;
+
+	
+
+	border: none;
+
+	width:316px;
+
+	height:27px;	
+
+	margin:15px 0;
+
+	color:#fff;
+
+	padding:0 0 0 10px;
+
+	}
+
+.ico{
+	float:right;
+}
+
+
+button{
+
+	height:33px;
+
+	text-align:center;
+
+	border:none;
+
+	float:right;
+	background: #363535;
+
+	color:#fff;
+
+	text-align:center;
+
+}
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

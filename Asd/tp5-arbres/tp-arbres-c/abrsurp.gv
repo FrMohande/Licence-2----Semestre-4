@@ -1,0 +1,55 @@
+digraph G{
+N40 [label="18"]
+N41 [label="14"]
+N42 [label="12"]
+N43 [style=invis]
+N44 [label="13"]
+N45 [style=invis]
+N46 [style=invis]
+N44 -> N45 [style=invis]
+N44 -> N46 [style=invis]
+N42 -> N43 [style=invis]
+N42 -> N44
+N47 [label="16"]
+N48 [label="15"]
+N49 [style=invis]
+N50 [style=invis]
+N48 -> N49 [style=invis]
+N48 -> N50 [style=invis]
+N51 [label="17"]
+N52 [style=invis]
+N53 [style=invis]
+N51 -> N52 [style=invis]
+N51 -> N53 [style=invis]
+N47 -> N48
+N47 -> N51
+N41 -> N42
+N41 -> N47
+N54 [label="21"]
+N55 [label="19"]
+N56 [style=invis]
+N57 [label="20"]
+N58 [style=invis]
+N59 [style=invis]
+N57 -> N58 [style=invis]
+N57 -> N59 [style=invis]
+N55 -> N56 [style=invis]
+N55 -> N57
+N60 [label="23"]
+N61 [label="22"]
+N62 [style=invis]
+N63 [style=invis]
+N61 -> N62 [style=invis]
+N61 -> N63 [style=invis]
+N64 [label="24"]
+N65 [style=invis]
+N66 [style=invis]
+N64 -> N65 [style=invis]
+N64 -> N66 [style=invis]
+N60 -> N61
+N60 -> N64
+N54 -> N55
+N54 -> N60
+N40 -> N41
+N40 -> N54
+}

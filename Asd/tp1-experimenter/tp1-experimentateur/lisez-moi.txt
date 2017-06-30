@@ -1,0 +1,11 @@
+TP1 d'ASD effectué par Eddy El Khatib
+
+Vous trouverez dans le fichier compte_rendu.txt, les réponses aux questions posées qui sont supposées être répondues à l'écrit (hors programmation ocaml).
+
+Dans le fichier test_tp1.ml, vous trouverez l'intégralité des fonctions programmées pour effectuer les fonctionnalitées voulues dans l'énnoncé du TP.
+
+Dans le dossier fichiers_dat vous trouverez la totalité des fichiers en extension ".dat" qu'il nous a été demandé de générer.
+
+Dans le dossier fichiers_png vous trouverez la totalité des graphes générés grâce à GNUPLOT et les fichiers en extension ".dat" cités ci-dessus.
+
+Bonne correction.

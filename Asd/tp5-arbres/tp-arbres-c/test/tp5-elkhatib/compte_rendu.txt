@@ -1,0 +1,14 @@
+TP effectué par Eddy El Khatib
+
+Question 11-
+
+S'assurer que quand on essaye d'insérer un élément dont la valeur est plus petite que le noeud, on le mette ) gauche sinon à droite.
+
+Question 15-
+
+On va mettre moins de temps sur l'arbre 3 car 0 étant plus petit que le noeud de valeur 1 et celui-ci n'ayant pas de fils gauche on trouve donc directement que l'élément 0 n'existe pas.
+
+Question 16-
+
+Element minimal -> l'élément le plus à gauche
+Element max -> élément le plus à droite

@@ -1,0 +1,53 @@
+#include "liste.h"
+
+liste_t freelist = 0 ;
+
+void construirecellule
+(liste_t tmp, noeud_m parnoeud)
+{
+	tmp = malloc(sizeof(struct cell_m));
+	tmp -> noeud = parnoeud;
+	tmp -> next = NULL ;
+	inserer(&freelist, tmp) ;
+	return ;
+}
+
+void 
+inserer
+(liste_t *list, liste_t cell)  
+{
+	liste_t current, tmp;
+	float freqCell;
+	char currentChar ;
+	current = *list;
+	currentChar = LETTER(cell);
+	freqCell = USS(cell);
+
+	if(*list != NULL ){
+		for(;current->next; current = current->next){
+			if((USS(current->next) >= freqCell) && (LETTER(current->next) > currentChar))
+				break;
+		}
+		tmp = current->next;
+		current->next = cell;
+		cell->next = tmp;
+	}else{
+		*list = cell;
+	}
+
+}
+
+
+liste_t 
+extraireEnTete
+(liste_t *list) 
+{
+	liste_t current, before;
+	current = *list;
+
+	if(*list != NULL){
+		*list = current->next;
+		return current;
+	}
+	return 0;
+}

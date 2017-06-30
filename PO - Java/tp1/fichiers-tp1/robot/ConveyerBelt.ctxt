@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=maxWeight
+comment0.target=ConveyerBelt(int)
+comment0.text=\r\n\ constructeurs\ d'objets\ de\ la\ classe\ TapisRoulant\r\n\ @param\ maxWeight\ poids\ maximum\ accept\u00C3\u00A9\ par\ le\ tapis\r\n
+comment1.params=
+comment1.target=int\ getMaxWeight()
+comment1.text=\r\n\ donne\ le\ poids\ maximal\ accepte\r\n\ \r\n\ @return\ le\ pods\ maximal\ accepte\r\n
+comment2.params=box
+comment2.target=void\ receive(Box)
+comment2.text=\r\n\ la\ tapis\ recoit\ une\ caisse\r\n\ \r\n\ @param\ box\r\n\ \ \ \ \ \ \ \ \ \ \ \ la\ caisse\ recue\r\n
+comment3.params=
+comment3.target=boolean\ isFull()
+comment3.text=\r\n\ indique\ si\ le\ tapis\ est\ plein\r\n\ \r\n\ @return\ <t>true</t>\ si\ le\ tapis\ est\ plein\ de\ caisses\r\n
+comment4.params=box
+comment4.target=boolean\ accept(Box)
+comment4.text=\r\n\ verifie\ si\ le\ tapis\ peut\ accepter\ la\ caisse,\ ie.\ si\ elle\ n'est\ pas\ trop\r\n\ lourde\r\n\ \r\n\ @param\ box\r\n\ \ \ \ \ \ \ \ \ \ \ \ \:\ la\ caisse\ a\ verifier\r\n\ @return\ <t>true</t>\ si\ la\ caisse\ peut\ etre\ portee,\ <t>false</t>\ sinon\r\n
+comment5.params=
+comment5.target=void\ display()
+comment5.text=\r\n\ affiche\ le\ contenu\ du\ tapis\ roulant\r\n
+comment6.params=
+comment6.target=void\ emptyBelt()
+comment6.text=\r\n\ vide\ le\ tapis\ roulant\ (supprime\ toutes\ les\ caisses)\r\n
+numComments=7

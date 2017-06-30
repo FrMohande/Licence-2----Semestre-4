@@ -1,0 +1,13 @@
+all: testtpiterateurs
+
+listeit.cmi : listeit.mli
+	ocamlc -c listeit.mli
+listeit.cmo : listeit.ml listeit.cmi
+	ocamlc -c listeit.ml
+testtpiterateurs.cmo: testtpiterateurs.ml listeit.ml
+	ocamlc -c testtpiterateurs.ml listeit.ml
+
+testtpiterateurs: testtpiterateurs.cmo listeit.cmo
+	ocamlc -o testtpiterateurs testtpiterateurs.cmo listeit.cmo
+clean:
+	rm *.cmi *.cmo testtpiterateurs

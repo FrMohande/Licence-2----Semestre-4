@@ -1,0 +1,120 @@
+package image;
+import image.*;
+import image.color.*;
+
+import java.util.*;
+
+public class Image {
+
+    Pixel[][] image;
+
+    public Image(int width, int height){
+        this.image = new Pixel[width][height];
+        for(int i = 0; i<width;i++)
+            for (int j = 0; j<height;j++)
+                this.image[i][j] = new Pixel(GrayColor.WHITE);
+    }
+
+    public int getWidth(){
+        return this.image.length;
+    }
+
+    public int getHeight(){
+        return this.image[0].length;
+    }
+
+    public Pixel getPixel(int x, int y) throws ArrayIndexOutOfBoundsException{
+        return this.image[x][y];
+    }
+
+    public void changeColorPixel(int x, int y, GrayColor color) throws ArrayIndexOutOfBoundsException{
+        this.image[x][y].setColor(color);
+    }
+
+    /**
+     * @param threshold
+     * @return
+     */
+    public Image edge(int threshold) {
+        Image imageRet = new Image(this.getWidth(), this.getHeight()); 
+	    for(int i =0;i<imageRet.getWidth();i++){
+            for(int j =0;j<imageRet.getHeight();j++){
+                if((i+1)<imageRet.getWidth()){
+                    if(this.image[i][j].colorDifference(this.image[i+1][j]) >= threshold){
+                        imageRet.changeColorPixel(i, j, GrayColor.BLACK);
+                        continue;
+                    }
+                }
+                if((j+1)<imageRet.getHeight()){
+                    if(this.image[i][j].colorDifference(this.image[i][j+1]) >= threshold) {
+                        imageRet.changeColorPixel(i, j, GrayColor.BLACK);
+                        continue;
+                    }
+                }
+            }
+        }
+        return imageRet;
+    }
+
+    /**
+     * @param nbGrayLevels
+     * @return
+     */
+    public Image decreaseGrayLevels(int nbGrayLevels) {
+       int t = 256 / nbGrayLevels;
+       Image imageRet = new Image(this.getWidth(), this.getHeight());
+
+       for(int i =0;i<imageRet.getWidth();i++){
+            for(int j =0;j<imageRet.getHeight();j++){
+                GrayColor currentColor = this.getPixel(i,j).getColor();
+		for(int k = 0 ; k <= nbGrayLevels ; k ++){
+			int pToCompInf = (k*t);
+       			int pToCompSup = ((k+1)*t)-1;
+			if(i==0){
+				System.out.println("min = " + Integer.toString(pToCompInf) + " max = " + Integer.toString(pToCompSup));
+			}
+	                if(currentColor.getLevel() >= pToCompInf && currentColor.getLevel() <= pToCompSup) {
+	                	imageRet.changeColorPixel(i, j, new GrayColor(pToCompInf));
+				break;
+	                }
+		}
+            }
+        }
+        return imageRet;
+    }
+
+    // ======================================================================
+    /** Reads a PGM image from file.
+     * It is assumed that file respect the following PGM file syntax:
+     *  <ul><li> first line with string "P2"</li>
+     *  <li>second line : a comment</li> 
+     *  <li>one int for width <code>w</code>, one int for height<code>h</code></li>
+     *  <li>one int for max gray level (not used here, we consider this level to be 255 in our images)</li>
+     *  <li><code>w</code> x <code>h</code> integers between 0 and max (for us =255) for each pixel</li></ul>
+     *  
+     *  @param fileName the name of the file with the image
+     */
+    public static Image initImagePGM(String fileName) {
+        Scanner scan = new Scanner(Image.class.getResourceAsStream(fileName));
+
+        scan.nextLine(); // line P2
+        scan.nextLine(); // line comment
+        // read width
+        int width = scan.nextInt();
+        // read height        
+        int height = scan.nextInt();
+        // read max gray level (not used)
+        scan.nextInt(); 
+        // create an initially white image
+        Image result = new Image(width, height); 
+        // rad pixels
+        for (int x = 0; x < height; x++) {
+            for (int y = 0; y < width; y++) {
+                result.changeColorPixel(y, x, new GrayColor(scan.nextInt()));
+            }
+        }
+        return result;
+    }
+
+
+}

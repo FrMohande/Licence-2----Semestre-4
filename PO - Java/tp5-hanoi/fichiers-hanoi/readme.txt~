@@ -1,0 +1,20 @@
+TP effectué par Eddy El Khatib et Mohand Outioua
+
+la première version est la version de liste chainée (déjà contenue dans le .jar), pour vérifier la seconde version il suffit de mettre le contenu du dossier hanoitableau dans le dossier src/hanoi
+
+l'execution des programmes se fait de la manière suivante :
+
+
+java -jar hanoi.jar <nbdiscs> <mode>
+
+<mode> : soit "interactive", "iterative", "recursive"
+
+
+Pour la vérification des test :
+
+make tst
+make tst2
+make tst3
+
+
+

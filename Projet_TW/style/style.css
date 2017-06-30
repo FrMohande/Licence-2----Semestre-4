@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+/* ---------------------- MENU ---------------------------*/
+* {
+	font-family:'Open Sans',sans-serif;
+	color:#e9ecf0;
+}
+body{
+	background-color:#4d5155;
+}
+
+.headercentrage{
+	width:95%;
+	margin:auto;
+	padding-top:12px;
+	padding-bottom:35px;
+}
+menu,nav{
+	display:block;
+}
+.header{
+	width:100%;
+	background-color:#000;
+	position:fixed;
+	z-index:2;
+	top:0;
+	left:0;
+	height: 49px;
+	box-shadow: 0px 3px 5px 0px black;
+}
+
+h1 {
+	text-align: center;
+}
+
+/* ------------------------- MENU - LOGO ----------------- */
+.logo{
+	margin-left: 15px;
+	float:left;
+}
+
+select, option {
+	color: black;
+}
+
+.log{
+	float:right;
+}
+/* ------------------------- MENU - connexion,déconnexion etc ----------------- */
+.log ul li{
+	float:left;
+	font-size:12px;
+	list-style-type:none;
+	margin-left: 12px;
+}
+
+ul{
+	margin:5px;
+}
+
+
+.caption p, .caption a {
+	color: black;
+}
+
+
+.log :not(:first-child){
+	cursor: pointer;
+}
+
+/* styles image*/
+
+.imageHolder {
+	display: inline-block;
+	margin-right:10px;
+	position:  relative; 
+	max-width: 300px; 
+	max-height: 300px;
+	margin-bottom: 20px;
+	border: solid 1px #EFEFEF;
+} 
+
+.imageHolder .caption {
+	display: none;
+	opacity: 0.8; 
+	padding-bottom: 5px;
+	padding-top: 5px;
+	position:  absolute; 
+	height:  auto; 
+	width: 300px;
+	bottom: 0px; 
+	left: 0px;
+	color: black; 
+	background: gray; 
+	text-align: center; 
+}
+
+.imageHolder img {
+	max-height: 300px;
+	width: 300px;
+	vertical-align : middle;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.imageHolder .fav, .diapHolder .fav{
+	position:  absolute;
+	margin: 5px 5px 0 0;
+	width: 20px;
+	height: 20px;
+	right: 0px;
+}
+
+.imageHolder:hover .caption{ 
+	display: block;
+}
+.diapCaption {
+	width: 500px;
+	position:  relative;
+	left: 32%;
+	margin-top: 10px;
+}
+
+.diapHolder {
+	vertical-align: middle;
+}
+
+.diapHolder img {
+	max-height: 30%;
+	max-width: 80%;
+	border: solid 2px #EFEFEF;
+	box-shadow: 2px 2px 5px 0px black;
+}
+
+#next,#before {
+	position: absolute;
+	top : 70%;
+}
+
+#before {
+	left: 10px;
+	vertical-align: middle;
+}
+
+#next {
+	right: 10px;
+	vertical-align: middle;
+}
+
+.caption p, .caption a , .diapCaption p{
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+
+/* stop */
+
+
+a {
+        text-decoration: none;
+        color: white;
+ 
+ }
+
+/* ------------------------------ CORPS --------------------------------------- */
+.conteneur{
+	margin-top:100px;
+}
+.mea{
+	text-align: center;
+	padding:20px;
+}
+
+
+/* ------------------------- SEARCH ------------------------------------- */
+#search 
+{
+	position: relative;
+	bottom: 6px;
+	color: black;
+}
+
+/* ----------- SEARCH AREA ------------------- */
+
+#filterArea, #memberArea {
+	background-color: #36393B;
+	box-shadow: 0px 3px 5px 0px black;
+	z-index: 0
+}
+
+#filterArea .fAZone, #memberArea .mAZone {
+	display: inline-block;
+	margin-left: 5%;
+	padding-bottom: 7px;
+	padding-top: 7px;
+}
+
+.fAZone h2, .mAZone h2{
+	display: inline-block;
+	margin-right: 10px;
+	font-family: "Open Sans",sans-serif;
+	font-size: 14px;
+	color: #E9ECF0;
+}
+
+#filterArea #closeButton{
+	cursor: pointer;
+	position: fixed;
+	
+	width: 20px;
+	height: 20px;
+	margin-top: 15px;
+	right : 2%;
+}
+
+#switch{
+	position: relative;
+	display: inline-flex;
+}
+
+#switch img{
+	margin-left: 10px;
+}
+
+h1 {
+	margin-top: 10%;
+}
+

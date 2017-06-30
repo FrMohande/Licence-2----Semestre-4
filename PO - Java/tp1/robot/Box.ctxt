@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=weight
+comment0.target=Box(int)
+comment0.text=\n\ constructeurs\ d'objets\ de\ la\ classe\ Box\n\ @param\ weight\ \:\ le\ poids\ de\ la\ caisse\n
+comment1.params=
+comment1.target=int\ getWeight()
+comment1.text=\ retourne\ le\ poids\ de\ la\ caisse\n
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3

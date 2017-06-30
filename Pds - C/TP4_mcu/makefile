@@ -1,0 +1,55 @@
+CFLAGS= -Wall -ansi -pedantic
+
+.PHONY: clean
+
+all: jeu mon_wc tst clean
+
+mcu_affiche_entier.o : mcu_affiche_entier.c
+	gcc -c mcu_affiche_entier.c $(CFLAGS)
+
+mcu_readl.o : mcu_readl.c
+	gcc -c mcu_readl.c $(CFLAGS)
+
+mcu_wc.o : mcu_wc.c
+	gcc -c mcu_wc.c $(CFLAGS)
+
+mcu_ww.o : mcu_ww.c
+	gcc -c mcu_ww.c $(CFLAGS)
+
+mcu_wl.o : mcu_wl.c
+	gcc -c mcu_wl.c $(CFLAGS)
+
+mon_wc.o : mon_wc.c
+	gcc -c mon_wc.c $(CFLAGS)
+
+mcu_fatal.o : mcu_fatal.c
+	gcc -c mcu_fatal.c $(CFLAGS)
+
+mon_wc : mon_wc.o mcu_affiche_entier.o mcu_readl.o mcu_wc.o mcu_ww.o mcu_wl.o mcu_fatal.o
+	gcc -o mon_wc mon_wc.o mcu_affiche_entier.o mcu_readl.o mcu_wc.o mcu_ww.o mcu_wl.o mcu_fatal.o $(CFLAGS)
+
+pile.o :
+	gcc -c pile.c $(CFLAGS)
+
+jeu : jeu.o pile.o
+	gcc -o jeu jeu.o pile.o $(CFLAGS)
+
+jeu.o: jeu.c jeu.h
+	gcc -c jeu.c  $(CFLAGS)
+
+clean:
+	rm -f *.o *~ 
+fclean:
+	rm -f jeu
+	rm -f mon_wc
+
+tst:
+	#wc -l < /etc/services 
+	#./mon_wc -l < /etc/services
+	#wc -w < /etc/services 
+	#./mon_wc -w < /etc/services
+	#wc -c < /etc/services 
+	#./mon_wc -c < /etc/services
+	./jeu lion peur
+	! ./jeu pigeon coucou
+	

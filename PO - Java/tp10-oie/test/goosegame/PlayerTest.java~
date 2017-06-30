@@ -1,0 +1,16 @@
+package rps ;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class PlayerTest {
+	@Test 
+	public void testGameTest() {
+
+	}
+	public static junit.framework.Test suite() {
+		return new junit.framework.JUnit4TestAdapter(rps.PlayerTest.class);
+    }
+}

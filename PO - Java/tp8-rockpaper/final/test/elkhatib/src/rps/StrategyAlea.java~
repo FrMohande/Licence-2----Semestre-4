@@ -1,0 +1,15 @@
+package rps.strategy;
+import java.util.Random ;
+
+public class StrategyAlea implements Strategy {
+	private static Random alea = new Random() ;
+	private Shape toPlay() ;
+
+	private StrategyAlea() {
+		alea = (alea % 3) ;
+		this.toPlay = shape.values()[alea] ; 
+	}
+	public Shape chooseShape() {
+		return this.toplay() ;	
+	}
+}

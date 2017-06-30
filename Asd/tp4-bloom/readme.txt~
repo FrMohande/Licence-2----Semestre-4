@@ -1,0 +1,5 @@
+tp effectué par Eddy El Khatib
+
+(** Question 4 : Pour une taille de 2^2 on a un faux positif sur un mot tiré aléatoirement *)
+
+remarque: pour l'execution du tp il met de 1.5 jusqu'a 2 minutes pour s'executer.

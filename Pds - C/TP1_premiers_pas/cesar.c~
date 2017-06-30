@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main (void) {
+  /*exercice : return 7; */ 
+  /*exercice :*/ return 256;
+  
+  	/*exercice 14 : */ 
+	/*putchar(getchar());*/
+
+}

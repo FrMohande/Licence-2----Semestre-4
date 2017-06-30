@@ -1,0 +1,9 @@
+El Khatib Eddy
+
+Question 1 -
+
+La définition de liste_interne permet de définir le type du contenu de la valeur (en l'occurence : soit "Vide" soit "Cons 'a cellule")
+
+Question 2 -
+
+La fonction "la_cellule" permet de récupérer la valeur de l'élément s'il y n'est pas vide 

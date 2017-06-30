@@ -1,0 +1,27 @@
+package goosegame ;
+
+
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class GooseBoardTest {
+	//int nbOfCells;
+	// Cell[] theCells;
+	private Board gooseBoard ;
+
+	@Before
+	public void before() {
+		this.gooseBoard = new GooseBoard(63) ;	
+	}
+	@Test
+	public void testnormalcell() {
+		assertNotNull(this.gooseBoard) ;	
+	}
+
+    // ---Pour permettre l'execution des tests ----------------------
+    public static junit.framework.Test suite() {
+		return new junit.framework.JUnit4TestAdapter(goosegame.GooseBoardTest.class);
+    }
+}

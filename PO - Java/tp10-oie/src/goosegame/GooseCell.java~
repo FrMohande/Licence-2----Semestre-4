@@ -1,0 +1,26 @@
+package goosegame;
+import goosegame.Player;
+import goosegame.Cell;
+
+public class GooseCell extends NormalCell{
+
+	public GooseCell(int index){
+		super(index);
+	}
+
+	/**
+	 *	The fact that this cell is a goose one, the cell really reached by
+	 *	the player is the one that is bump cells after it
+	 *	@param diceThrow
+	 *		the result of the dice when the player reaches this cell
+	 *	@return the cell, bump cells after this one
+	 */
+	public int handleMove(int diceThrow){
+		return super.handleMove() + diceThrow;
+	}
+
+	public String toString(){
+		return super.toString() + " (goose)";
+	}
+
+}

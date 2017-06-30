@@ -1,0 +1,4 @@
+for i in $(seq 10 10 100)
+do
+		(./test_tp1 $i) > tp1-$i.data
+done

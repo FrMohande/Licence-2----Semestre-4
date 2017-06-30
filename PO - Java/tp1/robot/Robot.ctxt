@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Robot()
+comment0.text=\n\ constructeurs\ d'objets\ de\ la\ classe\ Robot\n
+comment1.params=
+comment1.target=boolean\ carryBox()
+comment1.text=\n\ retourne\ <tt>true</tt>\ si\ le\ robot\ porte\ une\ caisse\n\ \n\ @return\ <tt>true</tt>\ si\ le\ robot\ porte\ une\ caisse\n
+numComments=2

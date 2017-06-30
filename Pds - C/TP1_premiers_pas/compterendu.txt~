@@ -1,0 +1,70 @@
+Eddy El Khatib
+
+///////// Exercice 3 ///////// 
+
+L'option -E de la commande gcc permet d'effectuer sur le fichier ciblé, la phase de préprocessing uniquement. La phase de compilation ne sera pas ici effectuée.
+
+gcc -E premierprogramme.c > premierprogramme.i
+
+///////// Exercice 4 ///////// 
+
+1- Nombre de lignes de premierprogramme.c est de 41
+   Nombre de lignes de premierprogramme.i est de 882
+
+2- La directive au préprocesseur "#include <stdio.h>" a été substituée par la totalité de son code.
+
+3- Les commentaires ont tout simplement disparu, car ils ne sont pas necessaires à la phase de préprocessing ou à la compilation
+
+4- La ligne "variable_de_classe_externe = VAL ;" à été traitée de la manière suivante : La constante VAL a été remplacée par sa valeur réelle à savoir 2.
+
+///////// Exercice 5 ///////// 
+
+L'option -s permet de s'arrêter juste après l'étape de compilation, il s'arrêtera juste avant l'assemblage. Le format de sortie est de l'assembleur.
+
+
+///////// Exercice 6 ///////// 
+
+1- .rodata, segment de données où sont stockées les portions d'objets ou leur addresse correspondante. (Au contraire de .data qui travaille en read-write, .rodata travail en read-only.) Dans notre programme, on voit que le contenu stocké permet l'allocation mémoire pour variable_de_classe_externe_constante.
+
+.text, est le segment où est stockée la suite d'instructions de notre programme, qui permettront au microprocesseur de l'executer correctement.
+
+2- Les identificateurs exportés, et en l'occurence, l'identificqateur exporté est ici "variable_de_classe_externe_constante".
+
+///////// Exercice 10 ///////// 
+
+L'identificateur "variable_definie_ailleur" est détécté comme indéfini, car celui-ci est une variable externe, qui ne pointe cependant vers aucune valeur.
+
+///////// Exercice 13 ///////// 
+
+>>>>>Voir fctreturn.c
+
+Pour récupérer le resultat de l'execution du fichier a.out : 
+"./a.out" puis "echo $?"
+
+"return 7;" est le code pour retourner la valeur 7.
+
+Si l'on retourne 256 on recevra la valeur 0, car toute valeur au dessus de 255 est hors limite et est donc remplacée par le résultat de (n - 256).
+
+///////// Exercice 14 ///////// 
+
+>>>>>>Voir fctchar.c
+
+1- getchar est la fonction qui permet de récupérer un caractère depuis l'entrée standard
+
+2- putchar est la fonction qui permet d'écrire un caractère sur la sortie standard
+
+3- "putchar(getchar());"
+
+///////// Exercice 15 ///////// 
+
+>>>>>>>Voir crypter.c
+
+///////// Exercice 16 ///////// 
+
+La commande pour obtenir le decryptage du fichier crypto2.txt dans un fichier result.txt est la suivante :
+
+"(./a.out < crypto2.txt ) > result.txt"
+
+Le resultat du décryptage se trouve donc dans le fichier "result.txt" dans le dossier "fichier_gene"
+
+

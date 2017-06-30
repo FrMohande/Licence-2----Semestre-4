@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=o
+comment0.target=boolean\ equals(java.lang.Object)
+comment1.params=author\ title\ year\ text
+comment1.target=Book(java.lang.String,\ java.lang.String,\ int,\ java.lang.String)
+comment1.text=\n\ Construit\ une\ instance\ de\ la\ classe\ Book\n\ \n\ @param\ author\ l'auteur\ du\ livre\n\ @param\ titlele\ titre\ du\ livre\n\ @param\ year\ l'annee\ de\ parution\ du\ livre\n\ @param\ text\ le\ texte\ du\ livre\n
+comment2.params=
+comment2.target=java.lang.String\ getAuthor()
+comment2.text=\n\ donne\ l'\ <t>auteur</t>\ du\ livre\n\ \n\ @return\ l'<t>auteur</t>\ du\ livre\n
+comment3.params=
+comment3.target=java.lang.String\ getTitle()
+comment3.text=\n\ donne\ le\ <t>titre</t>\ du\ livre\n\ \n\ @return\ le\ <t>titre</t>\ du\ livre\n
+comment4.params=
+comment4.target=void\ display()
+comment4.text=\n\ affiche\ les\ informations\ sur\ le\ livre\n
+comment5.params=
+comment5.target=void\ read()
+comment5.text=\n\ lit\ le\ livre\ (affiche\ le\ texte)\n
+numComments=6

@@ -1,0 +1,7 @@
+Tp effectué par Eddy El Khatib
+
+Information : n'ayant pu réussir à compiler avec le fichier testtp2.ml, j'ai modifié le makefile afin que l'executable soit tris et non testtp2 (au lieu d'appeler testtp2 il suffira de faire la même chose avec tris).
+
+Le fichier compte-rendu.txt contient l'ensemble des réponses au questions posées (hormis les questions nécessitant de la programmation qui elles se situent dans tris.ml)
+
+Le dossier test_dat contient lui l'ensemble des fichiers .dat qui m'ont permis d'observer l'évolution des algorithmes de tri suivant la taille du tableau.

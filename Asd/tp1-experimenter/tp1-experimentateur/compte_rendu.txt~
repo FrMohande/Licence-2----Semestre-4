@@ -1,0 +1,30 @@
+Eddy El Khatib
+
+Q2
+
+Pour étudier la complexité de l'algorithme, je propose de compter le nombre de comparaisons entre les valeurs du tableau des marqueurs ainsi que celles des marqueurs positifs.
+
+Q3
+
+Le pire cas est lorsque que les marqueurs positifs se trouvent à la fin du tableau des marqueurs
+
+Q4
+
+C1(m,p) = (m * p+1)/2 + m
+
+Q6
+
+Le pire cas : quand le tableau des positifs est trié de manière décroissante, et qu'il faut avec la fonction de tri tout replacer.
+
+c2(m,p) = [somme de i=0 à (m-1)](log2(m-i))
+
+Q8
+
+Il existe un pire cas : si tous les éléments positifs se trouvent à la fin du tableau des marqueurs à vérifier.
+
+C3(m,p) = p + m + m comparaisons (les premiers p et m sont le nombre de comparaisons effectiées lors du tri des tableaux)
+
+Q13
+
+Conclusion : GO UTILISER L'ALGO 2
+

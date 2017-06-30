@@ -1,0 +1,170 @@
+open Genere;;
+
+type 'a tranche = {t : 'a array; g : int; d : int} ;;
+
+let cpt = ref 0 ;;
+
+let moncmp a b =
+  cpt := !cpt +1;
+  compare a b;;
+
+let permut tr a b =
+  let temp = tr.t.(a) in
+  tr.t.(a) <- tr.t.(b);
+  tr.t.(b) <- temp
+
+let getindicedumax tr lmax =
+  let currentmax = ref min_int in
+  let indice = ref (-1) in
+  for i=tr.g to (tr.d) do
+    if tr.t.(i) < lmax && tr.t.(i) >= !currentmax then
+      begin
+	currentmax := tr.t.(i) ;
+	indice := i ;
+      end
+  done;
+  !indice
+
+let pivot_optimal tr = 
+  let n = ((tr.d - tr.g) /2)+1 in
+  let cpt = ref 1 in
+  let indice = ref (-1) in
+  
+  indice := getindicedumax tr max_int ;  
+  while(!cpt < n) do
+    indice := getindicedumax tr tr.t.(!indice);
+    cpt := !cpt + 1;
+  done;
+  !indice
+
+let pivot_aleatoire tr =
+  tr.g + (Random.int (tr.d-tr.g))
+
+
+(**
+   [tri_fusion t cmp] tri le tableau [t] selon la fonction de comparaison [cmp]
+*)
+let fusionner t1 t2 cmp =
+  let n1 = (Array.length t1)
+  and n2 = (Array.length t2)
+  in
+  let t = Array.concat [ t1; t2]
+  and i = ref 0 and j = ref 0 and k = ref 0
+  in
+  while !i < n1 && !j < n2 do
+    if (cmp t1.(!i)  t2.(!j)) < 0 then begin
+      t.(!k) <- t1.(!i);
+      i := !i + 1
+    end else begin
+      t.(!k) <- t2.(!j);
+      j := !j + 1
+    end;
+    k := !k + 1
+  done;
+  while !i < n1 do
+      t.(!k) <- t1.(!i);
+      i := !i + 1;
+      k := !k + 1
+  done;
+  while !j < n2 do
+      t.(!k) <- t2.(!j);
+      j := !j + 1;
+      k := !k + 1
+  done;
+  t
+
+let rec tri_fusion t cmp =
+  let n = Array.length t 
+  in
+  if n = 1 then
+    Array.sub t 0 n
+  else
+    let t1 = tri_fusion (Array.sub t 0 ((n-1)/2+1)) cmp
+    and t2 = tri_fusion (Array.sub t ((n-1)/2+1) ((n-1)-((n-1)/2+1)+1)) cmp
+    in
+    fusionner t1 t2 cmp
+
+
+(** 
+    [partitionner t cmp] partitionne la tranche [t] en deux tranches
+    et retourne un couple de tranches
+*)
+
+let partitionner tr cmp =
+  let pivot = tr.t.(tr.g) in
+  let indice = ref (tr.g) in
+  for i = (tr.g+1) to (tr.d) do
+    if cmp pivot tr.t.(i) > 0 then
+      begin
+	indice := !indice +1;
+	permut tr i !indice;
+      end
+  done;
+  permut tr (!indice) tr.g;
+  ({t= tr.t ; g=tr.g ; d=(!indice - 1) },{ t=tr.t ; g= !indice +1 ; d=(tr.d)})
+
+
+
+(**
+   [tri_rapîde t cmp] tri le tableau [t] selon la fonction de
+   comparaison [cmp] en utilisant l'algorithme de tri rapide
+*)
+let rec tri_rapide_tranche tr cmp =
+  if tr.g < tr.d then (
+    let moncouple = partitionner tr cmp in
+    tri_rapide_tranche (fst moncouple) cmp;
+    tri_rapide_tranche (snd moncouple) cmp;
+  )
+   
+let tri_rapide tab cmp =
+  tri_rapide_tranche {t=tab;g=0;d=(Array.length tab)-1} cmp;;
+
+let partitionner_ale tr piv cmp =
+  permut tr piv tr.g;
+  partitionner tr cmp
+
+let rec tri_rapide_tranche_ale tr cmp =
+  if tr.g < tr.d then (
+    let moncouple = partitionner_ale tr (pivot_aleatoire tr) cmp in
+    tri_rapide_tranche_ale (fst moncouple) cmp;
+    tri_rapide_tranche_ale (snd moncouple) cmp;
+  )
+
+
+let tri_rapide_ale tab cmp =
+   tri_rapide_tranche_ale {t=tab;g=0;d=(Array.length tab)-1} cmp;;
+
+
+let partitionner_optimal tr piv cmp =
+  permut tr piv tr.g;
+  partitionner tr cmp
+
+let rec tri_rapide_tranche_optimal tr cmp =
+  if tr.g < tr.d then (
+    let moncouple = partitionner_optimal tr (pivot_optimal tr) cmp in
+    tri_rapide_tranche_optimal (fst moncouple) cmp;
+    tri_rapide_tranche_optimal (snd moncouple) cmp;
+  );;
+
+let tri_rapide_optimal tab cmp =
+  tri_rapide_tranche_optimal {t=tab;g=0;d=(Array.length tab)-1} cmp;;
+
+ for i = 1 to 100 do
+    let tab = (Genere.tableau_aleatoire i) in
+    let tab2 = tab in
+    let tab3 = tab in
+    let cpt1 = ref 0 in
+    let cpt2 = ref 0 in
+    cpt := 0;
+    Tris.tri_rapide tab moncmp;   
+    cpt1 := !cpt;
+    cpt := 0;
+    Tris.tri_rapide_ale tab2 moncmp;
+    cpt2 := !cpt;
+    cpt := 0;
+    Tris.tri_rapide_optimal tab3 moncmp;
+    
+    Printf.printf "%d %d %d %d\n" i !cpt1 !cpt2 !cpt
+
+  done;
+   
